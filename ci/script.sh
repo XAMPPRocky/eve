@@ -6,14 +6,12 @@ set -ex
 main() {
     rustup self update
     cross build --target $TARGET
-    cross build --target $TARGET --release
 
     if [ ! -z $DISABLE_TESTS ]; then
         return
     fi
 
     cross test --target $TARGET
-    cross run --target $TARGET
 }
 
 # we don't run the "test phase" when doing deploys

@@ -47,9 +47,13 @@ fn main() -> Result<(), Box<error::Error>> {
             b
         };
 
-        let replaced = eve.replace(&text)?;
-        println!("{}", replaced);
-        return Ok(())
+        if text.is_empty() {
+            return Err("No input was provided as a file or stdin.".into())
+        } else {
+            let replaced = eve.replace(&text)?;
+            println!("{}", replaced);
+            return Ok(())
+        }
     }
 
     macro_rules! replace {
@@ -164,10 +168,10 @@ mod tests {
 
         Assert::main_binary()
             .with_args(&[
-                "-f",
-                env_file.path().to_str().unwrap(),
-                first_file.path().to_str().unwrap(),
-                second_file.path().to_str().unwrap()
+                       "-f",
+                       env_file.path().to_str().unwrap(),
+                       first_file.path().to_str().unwrap(),
+                       second_file.path().to_str().unwrap()
             ])
             .succeeds()
             .stdout()
