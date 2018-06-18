@@ -1,4 +1,12 @@
 # Eve: Environment editor
+[![Linux build status](https://img.shields.io/travis/Aaronepower/eve.svg?branch=master)](https://travis-ci.org/Aaronepower/eve)
+[![Windows build status](https://ci.appveyor.com/api/projects/status/github/Aaronepower/eve?svg=true)](https://ci.appveyor.com/project/Aaronepower/eve)
+[![](https://img.shields.io/crates/d/eve.svg)](https://crates.io/crates/eve)
+[![](https://img.shields.io/github/issues-raw/Aaronepower/eve.svg)](https://github.com/Aaronepower/eve/issues)
+[![](https://eve.rs/b1/github/Aaronepower/eve?category=code)](https://github.com/Aaronepower/eve)
+[![Documentation](https://docs.rs/eve/badge.svg)](https://docs.rs/eve/)
+[![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Aaronepower/donate)
+
 The **eve** utility reads the specified files, or standard input if no files are
 specified, replacing all instances of `{{VAR}}` with the environment variable
 of the same name e.g. `$VAR`. This utility is mainly useful as a replacement to

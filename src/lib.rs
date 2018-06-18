@@ -31,7 +31,7 @@
 //! ```
 //!
 //! #### `.env`
-//! ```
+//! ```text
 //! NGINX_HOST=localhost
 //! NGINX_PROXY=localhost:8000
 //! ```
@@ -79,24 +79,33 @@ use std::env;
 
 use regex::{Captures, Regex, Replacer};
 
-///
+/// A struct to allow replacement of text with environment variables.
+#[derive(Clone, Copy, Debug)]
 pub struct Eve;
 
 impl Eve {
+    /// Creates a new `Eve` using environment variables from `./.env`.
     pub fn new() -> Result<Self, dotenv::Error> {
         dotenv::dotenv()?;
         Ok(Eve)
     }
 
+    /// Creates a new `Eve` using environment variables from the path specified
+    /// by the `path` variables.
     pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Self, dotenv::Error> {
         dotenv::from_path(path)?;
         Ok(Eve)
     }
 
-    pub fn replace<'e, 's>(&'e mut self, text: &'s str) -> Result<Cow<'s, str>, regex::Error> {
+    /// Perform a replacement on the provided `text`.
+    pub fn replace<'e, 's>(&'e self, text: &'s str)
+        -> Result<Cow<'s, str>, regex::Error>
+    {
         let regex = Regex::new(r"\{\{(.*)\}\}")?;
 
-        Ok(regex.replace_all(text, self.by_ref()))
+        // `*self` used so that we can have `&self` without
+        // requiring `&mut self`.
+        Ok(regex.replace_all(text, *self))
     }
 }
 
