@@ -34,7 +34,7 @@ fn main() -> Result<(), Box<error::Error>> {
     let extension_option = matches.value_of("extension");
     let paths: Vec<&str> = matches.values_of("input").unwrap().collect();
 
-    let mut eve = if let Some(env) = file_option {
+    let eve = if let Some(env) = file_option {
         Eve::from_path(env).unwrap()
     } else {
         Eve::new().map_err(|_| "No `.env` present.").unwrap()
