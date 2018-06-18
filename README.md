@@ -42,7 +42,7 @@ $ cargo build --release
 - edit `PATH`
 - append folder path to the end of the string ie: `<path>;C:/eve/;`
 
-#### Library
+#### Library (Cargo.toml)
 ```
 eve = "0.1"
 ```
