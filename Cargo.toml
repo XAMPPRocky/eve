@@ -1,0 +1,29 @@
+[package]
+authors = ["Aaron Power <theaaronepower@gmail.com>"]
+description = "A program allowing for easy search and replace with environment variables."
+name = "eve"
+version = "0.1.0"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/Aaronepower/eve.git"
+keywords = ["search", "replace", "environment", "variable"]
+categories = ["command-line-utilities", "development-tools"]
+
+[badges]
+travis-ci = { repository = "Aaronepower/tokei" }
+appveyor = { repository = "Aaronepower/tokei" }
+
+[profile.release]
+panic="abort"
+lto=true
+
+[dependencies]
+clap = "2"
+dotenv = "0.13"
+regex = "1"
+walkdir = "2"
+
+[dev-dependencies]
+assert_cli = "0.6"
+tempfile = "3"
+dir-diff = "0.3"
