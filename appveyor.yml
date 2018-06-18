@@ -49,7 +49,7 @@ test_script:
     )
 
 before_deploy:
-  - cargo rustc --target %TARGET% --release -- -C lto
+  - cargo rustc --target %TARGET% --release --bin eve -- -C lto
   - ps: ci\before_deploy.ps1
 
 deploy:
