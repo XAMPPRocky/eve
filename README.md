@@ -3,7 +3,7 @@
 [![Windows build status](https://ci.appveyor.com/api/projects/status/github/Aaronepower/eve?svg=true)](https://ci.appveyor.com/project/Aaronepower/eve)
 [![](https://img.shields.io/crates/d/eve.svg)](https://crates.io/crates/eve)
 [![](https://img.shields.io/github/issues-raw/Aaronepower/eve.svg)](https://github.com/Aaronepower/eve/issues)
-[![](https://eve.rs/b1/github/Aaronepower/eve?category=code)](https://github.com/Aaronepower/eve)
+[![](https://tokei.rs/b1/github/Aaronepower/eve?category=code)](https://github.com/Aaronepower/eve)
 [![Documentation](https://docs.rs/eve/badge.svg)](https://docs.rs/eve/)
 [![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/Aaronepower/donate)
 
